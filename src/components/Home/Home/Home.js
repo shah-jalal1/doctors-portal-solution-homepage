@@ -7,6 +7,7 @@ import Testimonials from '../Testimonials/Testimonials';
 import Blogs from '../Blogs/Blogs';
 import Doctors from '../Doctors/Doctors';
 import Contact from '../Contact/Contact';
+import Footer from '../Footer/Footer';
 
 
 
@@ -21,6 +22,7 @@ const Home = () => {
             <Blogs></Blogs>
             <Doctors></Doctors>
             <Contact></Contact>
+            <Footer></Footer>
         </div>
     );
 };
