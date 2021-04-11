@@ -16,9 +16,12 @@ const customStyles = {
 Modal.setAppElement('#root')
 
 const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
-
-    const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+    const onSubmit = (data) => console.log(data);
 
     return (
         <div>
@@ -29,9 +32,21 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-
                 <h2 className="text-brand">{appointmentOn}</h2>
-               
+
+
+
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <input {...register('firstName')} /> {/* register an input */}
+                    <input {...register('lastName', { required: true })} />
+                    {errors.lastName && <p>Last name is required.</p>}
+                    <input {...register('age', { pattern: /\d+/ })} />
+                    {errors.age && <p>Please enter number for age.</p>}
+                    <input type="submit" />
+                </form>
+
+                
+
             </Modal>
         </div>
     );
