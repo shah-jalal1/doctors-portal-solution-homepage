@@ -39,22 +39,22 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <div className="form-group">
-                        <input type="text" {...register('firstName')} name="name" placeholder="Your Name" className="form-control" />
+                        <input type="text" {...register('name')} name="name" placeholder="Your Name" className="form-control" />
                         {errors.name && <span className="text-danger">This field is required</span>}
 
                     </div>
                     <div className="form-group">
-                        <input type="text"{...register('firstName')} name="phone" placeholder="Phone Number" className="form-control" />
+                        <input type="text"{...register('phone')} name="phone" placeholder="Phone Number" className="form-control" />
                         {errors.phone && <span className="text-danger">This field is required</span>}
                     </div>
                     <div className="form-group">
-                        <input type="text" {...register('firstName')} name="email" placeholder="Email" className="form-control" />
+                        <input type="text" {...register('email')} name="email" placeholder="Email" className="form-control" />
                         {errors.email && <span className="text-danger">This field is required</span>}
                     </div>
                     <div className="form-group row">
                         <div className="col-4">
 
-                            <select className="form-control" name="gender" {...register('firstName')} >
+                            <select className="form-control" name="gender" {...register('gender')} >
                                 <option disabled={true} value="Not set">Select Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
@@ -64,11 +64,11 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
 
                         </div>
                         <div className="col-4">
-                            <input {...register('firstName')} className="form-control" name="age" placeholder="Your Age" type="number" />
+                            <input {...register('age')} className="form-control" name="age" placeholder="Your Age" type="number" />
                             {errors.age && <span className="text-danger">This field is required</span>}
                         </div>
                         <div className="col-4">
-                            <input {...register('firstName')} className="form-control" name="weight" placeholder="Weight" type="number" />
+                            <input {...register('weight')} className="form-control" name="weight" placeholder="Weight" type="number" />
                             {errors.weight && <span className="text-danger">This field is required</span>}
                         </div>
                     </div>
