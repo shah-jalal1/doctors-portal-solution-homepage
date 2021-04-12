@@ -15,7 +15,11 @@ const Dashboard = () => {
 
     const handleDateChange = date => {
         setSelectedDate(date);
-        
+
+
+    }
+
+    useEffect(() => {
         fetch('http://localhost:5000/addAppointmentsByDate', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -23,7 +27,9 @@ const Dashboard = () => {
         })
             .then(res => res.json())
             .then(data => setAppointments(data))
-    }
+    }, [selectedDate])
+
+    console.log(appointments);
 
     return (
         <section>
