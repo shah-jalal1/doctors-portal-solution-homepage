@@ -15,13 +15,16 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
+const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn, date }) => {
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = (data) => {
+        console.log(data);
+        closeModal();
+    }
 
     return (
         <div>
@@ -32,15 +35,15 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointmentOn }) => {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <h2 className="text-brand">{appointmentOn}</h2>
+                <h2 className="text-brand text-center">{appointmentOn}</h2>
+                <p className="text-secondary text-center"><small >On {date.toDateString()}</small></p>
 
-
-
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form className="p-5" onSubmit={handleSubmit(onSubmit)}>    
 
                     <div className="form-group">
                         <input type="text" {...register('name')} name="name" placeholder="Your Name" className="form-control" />
                         {errors.name && <span className="text-danger">This field is required</span>}
+                        
 
                     </div>
                     <div className="form-group">
