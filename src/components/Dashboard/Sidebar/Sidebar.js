@@ -4,7 +4,7 @@ import './sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faCog, faSignOutAlt, faCalendar, faGripHorizontal, faUsers } from '@fortawesome/free-solid-svg-icons';
 // import {  faFileAlt } from '@fortawesome/free-regular-svg-icons'
-import { FaGripHorizontal, FaCalendarDay, FaUsers, FaFileAlt, FaUserCog, FaSignOutAlt } from 'react-icons/fa';
+import { FaGripHorizontal, FaCalendarDay, FaUsers, FaFileAlt, FaUserCog, FaSignOutAlt, FaUserPlus } from 'react-icons/fa';
 
 const Sidebar = () => {
     return (
@@ -32,6 +32,12 @@ const Sidebar = () => {
                     <Link to="/doctor/prescriptions" className="text-white">
                         {/* <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span> */}
                         <span> <FaFileAlt /> Prescriptions </span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/addDoctor" className="text-white">
+                        {/* <FontAwesomeIcon icon={faFileAlt} /> <span>Prescriptions</span> */}
+                        <span> <FaUserPlus /> Add Doctor </span>
                     </Link>
                 </li>
                 <li>
