@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+    Link
+  } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -9,24 +12,24 @@ const Navbar = () => {
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link mr-5" href="#">Home <span class="sr-only">(current)</span></a>
+            <ul className="navbar-nav ml-auto">
+                    <li className="nav-item active">
+                        <Link className="nav-link mr-5" to="/">Home</Link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-5" href="#">About</a>
+                    <li className="nav-item">
+                        <Link className="nav-link mr-5" to="/login">Login</Link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-5" href="#">Dental Services</a>
+                    <li className="nav-item">
+                        <Link className="nav-link mr-5" to="/dashboard">Dashboard</Link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-5 text-white" href="#">Reviews</a>
+                    <li className="nav-item">
+                        <Link className="nav-link mr-5 text-white" to="/dashboard">Admin</Link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-5 text-white" href="#">Blogs</a>
+                    <li className="nav-item">
+                        <Link className="nav-link mr-5 text-white" to="#">Blogs</Link>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-5 text-white" href="#">Contact Us</a>
+                    <li className="nav-item">
+                        <Link className="nav-link mr-5 text-white" to="#">Contact Us</Link>
                     </li>
                 </ul>
 
